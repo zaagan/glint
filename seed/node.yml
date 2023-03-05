@@ -1,0 +1,10 @@
+- name: Create a new Node.js project
+  description: Initialize a new Node.js project with npm
+  code: |
+    mkdir my-project
+    cd my-project
+    npm init
+
+- name: Install a package from npm
+  description: Install a package and save it to the project's dependencies
+  code: npm install <package> --save

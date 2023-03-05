@@ -1,0 +1,24 @@
+- name: List installed versions
+  description: Lists all the installed versions of Ruby
+  code: rbenv versions
+  type: rbenv
+
+- name: Set global version
+  description: Sets the global version of Ruby to use
+  code: rbenv global <version>
+  type: rbenv
+
+- name: Set local version
+  description: Sets the local version of Ruby to use
+  code: rbenv local <version>
+  type: rbenv
+
+- name: Install a specific version
+  description: Installs a specific version of Ruby
+  code: rbenv install <version>
+  type: rbenv
+  
+- name: Uninstall a specific version
+  description: Uninstalls a specific version of Ruby
+  code: rbenv uninstall <version>
+  type: rbenv

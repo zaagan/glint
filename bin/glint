@@ -8,3 +8,6 @@ Glint.start(ARGV)
 
 # Make sure to give permission to run this file:
 # chmod +x bin/glint
+
+# Add to path to directl call glint
+# export PATH=$PATH:$(pwd)/bin
