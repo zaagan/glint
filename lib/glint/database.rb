@@ -6,6 +6,8 @@ module Glint
   class Database
     TABLE_NAME = 'cheats'.freeze
 
+    CMD_SELECT_COLUMNS_FROM = 'SELECT type, name, code, description FROM '.freeze
+
     def initialize
       @db = SQLite3::Database.new('db/glint.db')
     end
@@ -47,7 +49,7 @@ module Glint
 
     # LIST ALL CHEATS
     def list_cheats(type = nil)
-      sql = "SELECT type, name, code, description FROM #{TABLE_NAME}"
+      sql = "#{CMD_SELECT_COLUMNS_FROM} #{TABLE_NAME}"
 
       if type.nil?
         rows = @db.execute(sql)
@@ -61,10 +63,10 @@ module Glint
 
     def search_cheats(term, type = nil)
       if type.nil?
-        sql = "SELECT type, name, code, description FROM #{TABLE_NAME} WHERE name LIKE ? OR description LIKE ? OR code LIKE ?"
+        sql = "#{CMD_SELECT_COLUMNS_FROM} #{TABLE_NAME} WHERE name LIKE ? OR description LIKE ? OR code LIKE ?"
         rows = @db.execute(sql, "%#{term}%", "%#{term}%", "%#{term}%")
       else
-        sql = "SELECT type, name, code, description FROM #{TABLE_NAME} WHERE (name LIKE ? OR description LIKE ? OR code LIKE ?) AND type = ?"
+        sql = "#{CMD_SELECT_COLUMNS_FROM} #{TABLE_NAME} WHERE (name LIKE ? OR description LIKE ? OR code LIKE ?) AND type = ?"
         rows = @db.execute(sql, "%#{term}%", "%#{term}%", "%#{term}%", type)
       end
 

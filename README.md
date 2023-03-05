@@ -1,4 +1,4 @@
-# Glint Cheat Sheet
+# Glint - A Terminal based Cheat Sheet
 
 Glint is a command-line application that allows you to create, edit, and access your own cheat sheet for programming languages, frameworks, or anything else you might want to keep track of. You can add cheats with a name, description, and code snippet, and then easily search for and view them later.
 
@@ -25,6 +25,15 @@ cd glint
 bundle install
 ```
 
+4. Make the bin/glint file executable
+```
+chmod +x bin/glint
+```
+
+5. For global use - Add glint to your `PATH`
+```
+export PATH=$PATH:$(pwd)/bin
+```
 
 &nbsp;
 
@@ -32,20 +41,21 @@ bundle install
 
 ### Initializing the database
 
-Before you can use Glint, you need to initialize the database:
+Before you can use Glint, you need to initialize the database.
+Luckily glint initializes itself if you run one of the glint commands. For example
 
 ```
-bin/glint init
+bin/glint list
 ```
-
-
-This will create a SQLite database file named `glint.db` in the `db` directory.
-
+It creates an SQLite database file named `glint.db` in the `db` directory.
 
 &nbsp;
 ### Adding a cheat
 
-To add a cheat, use the `add` command with the cheat's name, description, and code snippet:
+There are two ways to add your own custom cheats
+
+#### 1st Approach:
+To add a cheat, use the `add` command with the cheat's type, name, code snippet and description:
 
 
 ```
@@ -57,14 +67,20 @@ column2 datatype,
 
 ```
 
+or
+Create your own .yml file in the `seed/` directory.
+Check out existing samples in the directory. 
+The next time you run a `glint` command, your cheats get auto inserted to the database.
+
 
 &nbsp;
 ### Listing cheats
 
 To list all cheats, use the `list` command:
+The `type` field can be optionally used to dislay only for a certain type.
 
 ```
-bin/glint list
+bin/glint list <type>
 ```
 
 
