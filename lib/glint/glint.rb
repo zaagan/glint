@@ -19,13 +19,15 @@ module Glint
     end
 
     desc 'list [TYPE]', 'List all cheats'
+    method_option :description, type: :boolean, aliases: "-d", desc: "Display descriptions"
     def list(type = nil)
-      sheet.list(type)
+      sheet.list(type, options)
     end
 
     desc 'search SEARCH_TERM [TYPE]', 'List all cheats'
+    method_option :description, type: :boolean, aliases: "-d", desc: "Display descriptions"
     def search(term, type = nil)
-      sheet.search(term, type)
+      sheet.search(term, type, options)
     end
 
     private

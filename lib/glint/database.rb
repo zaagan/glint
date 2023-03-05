@@ -1,9 +1,12 @@
 require 'sqlite3'
 require 'colorize'
 require 'terminal-table'
+require_relative 'display_handler'
 
 module Glint
   class Database
+    include Glint::DisplayHandler
+
     TABLE_NAME = 'cheats'.freeze
 
     CMD_SELECT_COLUMNS_FROM = 'SELECT type, name, code, description FROM '.freeze
@@ -48,7 +51,7 @@ module Glint
     end
 
     # LIST ALL CHEATS
-    def list_cheats(type = nil)
+    def list_cheats(type = nil, options = {})
       sql = "#{CMD_SELECT_COLUMNS_FROM} #{TABLE_NAME}"
 
       if type.nil?
@@ -58,10 +61,10 @@ module Glint
         rows = @db.execute(sql, type)
       end
 
-      print_rows(rows)
+      print_rows(rows, type, options)
     end
 
-    def search_cheats(term, type = nil)
+    def search_cheats(term, type = nil, options = {})
       if type.nil?
         sql = "#{CMD_SELECT_COLUMNS_FROM} #{TABLE_NAME} WHERE name LIKE ? OR description LIKE ? OR code LIKE ?"
         rows = @db.execute(sql, "%#{term}%", "%#{term}%", "%#{term}%")
@@ -70,38 +73,7 @@ module Glint
         rows = @db.execute(sql, "%#{term}%", "%#{term}%", "%#{term}%", type)
       end
 
-      print_rows(rows)
-    end
-
-    private
-
-    def print_rows(rows)
-      table_rows = rows.map do |row|
-        type = row[0]
-        name = row[1].colorize(:light_blue).bold
-        code = row[2].colorize(:light_green)
-        description = row[3]
-
-        [type, name, code, description]
-      end
-
-      table = Terminal::Table.new(
-        headings: ['Type', 'Name', 'Code', 'Description'],
-        rows: table_rows,
-        style: {
-          border_x: '',
-          border_i: '',
-          border_y: '',
-          padding_left: 0,
-          padding_right: 2
-        }
-      )
-      table.align_column(0, :left)
-      table.align_column(1, :left)
-      table.align_column(2, :left)
-      table.align_column(3, :left)
-
-      puts table
+      print_rows(rows, type, options)
     end
   end
 end

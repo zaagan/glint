@@ -1,7 +1,22 @@
+- name: Upgrade rbenv and plugins
+  type: rbenv
+  description: Update rbenv and all installed plugins to the latest versions
+  code: |
+    cd ~/.rbenv
+    git pull
+    cd plugins/ruby-build
+    git pull
+
 - name: List installed versions
   description: Lists all the installed versions of Ruby
   code: rbenv versions
   type: rbenv
+
+- name: List all available Ruby versions
+  type: rbenv
+  description: Display a list of all available Ruby versions that can be installed with rbenv
+  code: |
+    rbenv install --list
 
 - name: Set global version
   description: Sets the global version of Ruby to use
@@ -22,3 +37,39 @@
   description: Uninstalls a specific version of Ruby
   code: rbenv uninstall <version>
   type: rbenv
+
+- name: Rehash rbenv shims
+  type: rbenv
+  description: Update the rbenv shims to point to the correct Ruby binaries
+  code: |
+    rbenv rehash
+
+- name: Install a Ruby version with a specific patch level
+  type: rbenv
+  description: Install Ruby version 2.7.2-p137 using rbenv
+  code: |
+    rbenv install 2.7.2-p137
+
+- name: Remove a Ruby version
+  type: rbenv
+  description: Remove Ruby version 2.5.3 and all associated gems
+  code: |
+    rbenv uninstall 2.5.3
+
+- name: Show the current Ruby version
+  type: rbenv
+  description: Display the currently active Ruby version
+  code: |
+    rbenv version
+
+- name: Install JRuby
+  type: rbenv
+  description: Install JRuby version 9.2.19.0 using rbenv
+  code: |
+    rbenv install jruby-9.2.19.0
+
+- name: List all JRuby versions
+  type: rbenv
+  description: Display a list of all JRuby versions installed with rbenv
+  code: |
+    rbenv versions

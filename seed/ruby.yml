@@ -1,0 +1,20 @@
+- name: Install rbenv
+  type: ruby
+  description: Install rbenv on macOS or Linux
+  code: |
+    # Install rbenv
+    git clone https://github.com/rbenv/rbenv.git ~/.rbenv
+    # Add rbenv to PATH
+    echo 'export PATH="$HOME/.rbenv/bin:$PATH"' >> ~/.bashrc
+    echo 'eval "$(rbenv init -)"' >> ~/.bashrc
+    # Install ruby-build plugin
+    git clone https://github.com/rbenv/ruby-build.git ~/.rbenv/plugins/ruby-build
+    # Install Ruby version 3.0.0
+    rbenv install 3.0.0
+    rbenv global 3.0.0
+
+- name: Install a specific Rubygem
+  type: ruby
+  description: Install the Rails gem for the current Ruby version
+  code: |
+    gem install rails

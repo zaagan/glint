@@ -50,12 +50,12 @@ module Glint
       @db.delete_cheat(name)
     end
 
-    def list(type = nil)
-      @db.list_cheats(type)
+    def list(type = nil, options = {})
+      @db.list_cheats(type, options)
     end
 
-    def search(term, type = nil)
-      @db.search_cheats(term, type)
+    def search(term, type = nil, options = {})
+      @db.search_cheats(term, type, options)
     end
   end
 end
