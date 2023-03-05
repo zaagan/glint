@@ -1,0 +1,49 @@
+- name: Create a new console app
+  type: .net-core
+  description: Creates a new console application
+  code: dotnet new console
+
+- name: Create a new web app
+  type: .net-core
+  description: Creates a new web application
+  code: dotnet new webapp
+
+- name: Restore dependencies
+  type: .net-core
+  description: Restore the dependencies of a project
+  code: dotnet restore
+
+- name: Build a project
+  type: .net-core
+  description: Builds a project
+  code: dotnet build
+
+- name: Run a project
+  type: .net-core
+  description: Runs a project
+  code: dotnet run
+
+- name: Create a new solution
+  type: .net-core
+  description: Creates a new solution
+  code: dotnet new sln
+
+- name: Add a project to solution
+  type: .net-core
+  description: Adds a project to a solution
+  code: dotnet sln add <project_name>
+
+- name: Remove a project from solution
+  type: .net-core
+  description: Removes a project from a solution
+  code: dotnet sln remove <project_name>
+
+- name: List projects in solution
+  type: .net-core
+  description: Lists the projects in a solution
+  code: dotnet sln list
+
+- name: Add a NuGet package
+  type: .net-core
+  description: Adds a NuGet package to a project
+  code: dotnet add <project_name> package <package_name>

@@ -83,8 +83,10 @@ The `type` field can be optionally used to dislay only for a certain type.
 bin/glint list <type>
 ```
 
-
 This will display a table of all cheats currently stored in the database.
+
+### Sample
+![List_example](snapshots/list_example.png)
 
 
 &nbsp;
@@ -100,6 +102,9 @@ bin/glint search "table"
 
 This will display a table of all cheats that include the search term "table" in either the name or description.
 
+
+### Sample
+![search_example](snapshots/search_example.png)
 
 &nbsp;
 ### Updating a cheat
@@ -120,10 +125,10 @@ This will update the cheat with ID 1 to have the new name and code snippet.
 &nbsp;
 ### Deleting a cheat
 
-To delete a cheat, use the `delete` command with the cheat's ID:
+To delete a cheat, use the `delete` command with the cheat's name:
 
 ```
-bin/glint delete 1
+bin/glint delete <name>
 ```
 
 
