@@ -1,3 +1,19 @@
+- name: Install rbenv
+  type: rbenv
+  description: Install rbenv and ruby-build
+  code: |
+    # Step 1: Install rbenv and ruby-build
+    git clone https://github.com/sstephenson/rbenv.git ~/.rbenv
+    git clone https://github.com/sstephenson/ruby-build.git ~/.rbenv/plugins/ruby-build
+
+    # Step 2: Add to ~/.bash_profile
+    echo 'export PATH="$HOME/.rbenv/bin:$PATH"' >> ~/.bash_profile
+    echo 'eval "$(rbenv init -)"' >> ~/.bash_profile
+
+    # Step 3: Verify installation
+    rbenv -v
+    type rbnev
+
 - name: Upgrade rbenv and plugins
   type: rbenv
   description: Update rbenv and all installed plugins to the latest versions
@@ -7,26 +23,42 @@
     cd plugins/ruby-build
     git pull
 
-- name: List installed versions
-  description: Lists all the installed versions of Ruby
-  code: rbenv versions
-  type: rbenv
-
 - name: List all available Ruby versions
   type: rbenv
   description: Display a list of all available Ruby versions that can be installed with rbenv
   code: |
-    rbenv install --list
+    rbenv install --list|-l
 
 - name: Set global version
   description: Sets the global version of Ruby to use
   code: rbenv global <version>
   type: rbenv
 
+- name: Undo global version 
+  description: Undo the previously set global version
+  code: rbenv global --unset
+  type: rbenv
+
 - name: Set local version
   description: Sets the local version of Ruby to use
   code: rbenv local <version>
   type: rbenv
+
+- name: Undo local version
+  description: Undo the previouly set local version
+  code: rbenv local --unset
+  type: rbenv
+
+- name: Set sell version
+  description: Uses a specific version in shell
+  code: rbenv shell <version>
+  type: rbenv
+
+- name: Undo shell version
+  description: Undo the previous command
+  code: rbenv shell --unset
+  type: rbenv
+
 
 - name: Install a specific version
   description: Installs a specific version of Ruby
@@ -56,20 +88,19 @@
   code: |
     rbenv uninstall 2.5.3
 
-- name: Show the current Ruby version
-  type: rbenv
-  description: Display the currently active Ruby version
-  code: |
-    rbenv version
-
 - name: Install JRuby
   type: rbenv
   description: Install JRuby version 9.2.19.0 using rbenv
   code: |
     rbenv install jruby-9.2.19.0
 
-- name: List all JRuby versions
+- name: Show the current Ruby version
   type: rbenv
-  description: Display a list of all JRuby versions installed with rbenv
+  description: Display the currently active Ruby version
   code: |
-    rbenv versions
+    rbenv version
+
+- name: List installed versions
+  type: rbenv
+  description: Lists all the installed versions of Ruby
+  code: rbenv versions

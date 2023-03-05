@@ -11,6 +11,12 @@ module Glint
       seed
     end
 
+    def reset
+      @db.drop_table
+      @db.create_table
+      seed
+    end
+
     def seed
       types = Dir.entries("seed").select do |entry|
         entry.include?('.yml') &&  !entry.start_with?(".")

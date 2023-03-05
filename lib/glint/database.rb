@@ -15,6 +15,10 @@ module Glint
       @db = SQLite3::Database.new('db/glint.db')
     end
 
+    def drop_table
+      @db.execute("DROP TABLE IF EXISTS #{TABLE_NAME};")
+    end
+
     def create_table
       @db.execute <<-SQL
         CREATE TABLE IF NOT EXISTS #{TABLE_NAME} (

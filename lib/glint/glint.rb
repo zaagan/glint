@@ -3,6 +3,17 @@ require_relative 'cheat_sheet'
 
 module Glint
   class CLI < Thor
+    desc 'reset', 'Reset Glint to initial state'
+    def reset
+      puts "This will delete all cheat sheets and reset the database. Do you want to continue? (y/n)"
+      answer = STDIN.gets.chomp.downcase
+      if answer == 'y' || answer == 'yes'
+        sheet.reset
+      else
+        puts "Aborting reset."
+      end
+    end
+
     desc 'add TYPE, NAME CODE [DESCRIPTION] ', 'Add a cheat'
     def add(type, name, code, description = '')
       sheet.add(type, name, code, description)
