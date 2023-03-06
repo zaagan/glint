@@ -2,7 +2,7 @@
 module Glint
   module DisplayHandler
   
-    def print_rows(rows, search_type = nil, options = {})
+    def print_rows(rows, search_type = nil, term = nil, options = {})
       table_rows = rows.map do |row|
         type = row[0]
 
@@ -27,6 +27,8 @@ module Glint
       headings << 'Type' if search_type.nil?
       headings += ['Name', 'Code']
       headings << 'Description' if options['description']
+
+      title = "Search resul for '#{term}'" if term
 
       title = "#{search_type} Cheat Sheet" if search_type
 

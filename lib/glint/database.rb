@@ -65,7 +65,7 @@ module Glint
         rows = @db.execute(sql, type)
       end
 
-      print_rows(rows, type, options)
+      print_rows(rows, type, nil, options)
     end
 
     def search_cheats(term, type = nil, options = {})
@@ -77,7 +77,7 @@ module Glint
         rows = @db.execute(sql, "%#{term}%", "%#{term}%", "%#{term}%", type)
       end
 
-      print_rows(rows, type, options)
+      print_rows(rows, type, term, options)
     end
   end
 end

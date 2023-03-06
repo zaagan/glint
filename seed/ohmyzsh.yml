@@ -1,0 +1,262 @@
+- name: ohmyzsh-install
+  type: ohmyzsh
+  description: Install Oh My Zsh on macOS or Linux
+  code: |
+    sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+
+- name: oh-my-zsh plugins
+  type: zsh
+  description: List all the available plugins in Oh My Zsh.
+  code: |
+    cd ~/.oh-my-zsh/plugins
+    ls
+
+- name: g
+  type: ohmyzsh
+  code: git
+  description: Execute git command
+
+- name: gb
+  type: ohmyzsh
+  code: git branch
+  description: List all local branches
+
+- name: gba
+  type: ohmyzsh
+  code: git branch -a
+  description: List all branches (local and remote)
+
+- name: gbl
+  type: ohmyzsh
+  code: git blame
+  description: Show what revision and author last modified each line of a file
+
+- name: gc
+  type: ohmyzsh
+  code: git commit
+  description: Record changes to the repository
+
+- name: gca
+  type: ohmyzsh
+  code: git commit -a
+  description: Record changes to the repository (all changes)
+
+- name: gcam
+  type: ohmyzsh
+  code: git commit -a -m
+  description: Record changes to the repository (all changes with a message)
+
+- name: gcb
+  type: ohmyzsh
+  code: git checkout -b
+  description: Create a new branch and switch to it
+
+- name: gcf
+  type: ohmyzsh
+  code: git config --list
+  description: List all git configurations
+
+- name: gcl
+  type: ohmyzsh
+  code: git clone
+  description: Clone a repository into a new directory
+
+- name: gco
+  type: ohmyzsh
+  code: git checkout
+  description: Switch branches or restore working tree files
+
+- name: gd
+  type: ohmyzsh
+  code: git diff
+  description: Show changes between commits, commit and working tree, etc
+
+- name: gdc
+  type: ohmyzsh
+  code: git diff --cached
+  description: Show changes between the index and a specific commit
+
+- name: gds
+  type: ohmyzsh
+  code: git diff --stat
+  description: Show diffstat instead of diff output
+
+- name: gf
+  type: ohmyzsh
+  code: git fetch
+  description: Download objects and refs from another repository
+
+- name: gg
+  type: ohmyzsh
+  code: git grep
+  description: Print lines matching a pattern
+
+- name: gi
+  type: ohmyzsh
+  code: git init
+  description: Create an empty Git repository or reinitialize an existing one
+
+- name: gignore
+  type: ohmyzsh
+  code: gi && echo ".DS_Store\n.idea" >> .gitignore && git add .gitignore && git commit -m "Add .gitignore"
+
+- name: gl
+  type: ohmyzsh
+  code: git log
+  description: Show commit logs
+
+- name: glo
+  type: ohmyzsh
+  code: git log --oneline
+  description: Show commit logs in one line
+
+- name: glol
+  type: ohmyzsh
+  code: git log --graph --decorate --pretty=oneline --abbrev-commit
+  description: Show commit logs in a more detailed graph view
+
+- name: gm
+  type: ohmyzsh
+  code: git merge
+  description: Join two or more development histories together
+
+- name: gpo
+  type: ohmyzsh
+  code: git push origin
+  description: Push changes to the origin remote
+
+- name: gpl
+  type: ohmyzsh
+  code: git pull
+  description: Fetch from and merge with another repository or a local branch
+
+- name: gpsup
+  type: ohmyzsh
+  code: git push --set-up
+
+
+- name: gaa
+  type: ohmyzsh
+  description: Add all changes to the staging area
+  code: git add --all
+
+- name: gcm
+  type: ohmyzsh
+  description: Commit changes with a message
+  code: git commit -m
+
+- name: gs
+  type: ohmyzsh
+  description: View the current branch status
+  code: git status
+
+- name: gco
+  type: ohmyzsh
+  description: Checkout a branch
+  code: git checkout
+
+- name: gb
+  type: ohmyzsh
+  description: List all branches
+  code: git branch
+
+- name: gbd
+  type: ohmyzsh
+  description: Delete a branch
+  code: git branch -d
+
+- name: gbr
+  type: ohmyzsh
+  description: Rename a branch
+  code: git branch -m
+
+- name: gpull
+  type: ohmyzsh
+  description: Pull changes from the remote branch
+  code: git pull
+
+- name: gpush
+  type: ohmyzsh
+  description: Push changes to the remote branch
+  code: git push
+
+- name: glog
+  type: ohmyzsh
+  description: View commit history
+  code: git log
+
+- name: gs
+  type: ohmyzsh
+  code: git stash
+
+- name: gsp
+  type: ohmyzsh
+  code: git stash push
+
+- name: gsta
+  type: ohmyzsh
+  code: git stash pop
+
+- name: gaa
+  type: ohmyzsh
+  code: git add all
+
+- name: gai
+  type: ohmyzsh
+  code: git add interactive
+
+- name: gac
+  type: ohmyzsh
+  code: git commit all
+
+- name: gama
+  type: ohmyzsh
+  code: git commit amend
+
+- name: gami
+  type: ohmyzsh
+  code: git commit interactive
+
+- name: ggp
+  type: ohmyzsh
+  code: git push current branch
+
+- name: ggpf
+  type: ohmyzsh
+  code: git push force
+
+- name: ggt
+  type: ohmyzsh
+  code: git push tags
+
+- name: gup
+  type: ohmyzsh
+  code: git pull current branch
+
+- name: gupr
+  type: ohmyzsh
+  code: git pull rebase
+
+- name: gbd
+  type: ohmyzsh
+  code: git branch delete merged
+
+- name: gbr
+  type: ohmyzsh
+  code: git branch recent
+
+- name: gbrm
+  type: ohmyzsh
+  code: git branch remote
+
+- name: gds
+  type: ohmyzsh
+  code: git diff staged
+
+- name: glg
+  type: ohmyzsh
+  code: git log one line
+
+- name: gfl
+  type: ohmyzsh
+  code: git log file history

@@ -1,0 +1,184 @@
+- name: git add
+  type: git
+  description: Adds changes to the index for the next commit
+  code: git add <filename>
+
+- name: git commit
+  type: git
+  description: Record changes to the repository
+  code: git commit -m "Commit message"
+
+- name: git push
+  type: git
+  description: Update remote refs along with associated objects
+  code: git push <remote> <branch>
+
+- name: git pull
+  type: git
+  description: Fetch from and integrate with another repository or a local branch
+  code: git pull <remote> <branch>
+
+- name: git clone
+  type: git
+  description: Clone a repository into a new directory
+  code: git clone <repository-url>
+
+- name: git status
+  type: git
+  description: Show the working tree status
+  code: git status
+
+- name: git branch
+  type: git
+  description: List, create, or delete branches
+  code: git branch [<branch>]
+
+- name: Show branch history
+  type: git
+  description: Show all branches that have been merged into the current branch
+  code: git branch --merged
+
+- name: Rename a branch locally and remotely
+  type: git
+  description: Rename a branch locally and remotely
+  code: git branch -m <old-branch-name> <new-branch-name> && git push origin :<old-branch-name> <new-branch-name>
+
+- name: git checkout
+  type: git
+  description: Switch branches or restore working tree files
+  code: git checkout <branch>
+
+- name: git merge
+  type: git
+  description: Merge a specific branch into the current branch
+  code: git merge <branch-name>
+
+- name: Rebase the current branch onto a specific branch
+  type: git
+  description: Rebase the current branch onto a specific branch
+  code: git rebase <branch-name>
+
+- name: git log
+  type: git
+  description: Show commit logs
+  code: git log
+
+- name: Show commits from a specific branch not in master
+  type: git
+  description: Show commits from a specific branch that are not in the master branch
+  code: git log master..<branch-name>
+
+- name: Revert a commit
+  type: git
+  description: Reverts the specified commit
+  code: git revert <commit-hash>
+
+- name: Reset to a previous commit
+  type: git
+  description: Resets the repository to a previous commit
+  code: git reset <commit-hash>
+
+- name: Reset to a previous commit and remove changes
+  type: git
+  description: Reset to a previous commit and remove changes from the working directory
+  code: git reset --hard <commit-hash>
+
+- name: Undo last commit and keep changes
+  type: git
+  description: Undo the last commit but keep the changes in the working directory
+  code: git reset --soft HEAD~1
+
+- name: Show the diff between commits
+  type: git
+  description: Displays the difference between two commits
+  code: git diff <commit-hash-1> <commit-hash-2>
+
+- name: Show difference between two branches
+  type: git
+  description: Show the difference between two branches
+  code: git diff <branch1>..<branch2>
+
+- name: Checkout a remote branch
+  type: git
+  description: Checkout and track a remote branch
+  code: git checkout -b <branch-name> origin/<branch-name>
+
+- name: Remove untracked files and directories
+  type: git
+  description: Remove untracked files and directories from the working directory
+  code: git clean -fd
+
+- name: git-cat-file
+  type: git
+  description: Provide content or type and size information for repository objects
+  code: git cat-file -p <object-id>
+
+- name: git-check-attr
+  type: git
+  description: Read Git attributes
+  code: git check-attr <path>
+
+- name: git-check-ignore
+  type: git
+  description: Debug gitignore / exclude files
+  code: git check-ignore -v <path>
+
+- name: git-fsck
+  type: git
+  description: Verify the connectivity and validity of the objects in the database
+  code: git fsck
+
+- name: git-hash-object
+  type: git
+  description: Compute object ID and optionally creates a blob from a file
+  code: git hash-object [-w] <file>
+
+- name: git-index-pack
+  type: git
+  description: Build pack index file for an existing packed archive
+  code: git index-pack <pack-file>
+
+- name: git-merge-file
+  type: git
+  description: Run a three-way file merge
+  code: git merge-file -p <base> <current> <other>
+
+- name: git-merge-index
+  type: git
+  description: Run a merge for files needing merging from an index file
+  code: git merge-index --index <file>
+
+- name: git-mktag
+  type: git
+  description: Create a tag object
+  code: git mktag [-m <msg>] <object>
+
+- name: git-mktree
+  type: git
+  description: Build a tree object from ls-tree formatted text
+  code: git mktree < ls-tree-output
+
+- name: git-pack-objects
+  type: git
+  description: Create a packed archive of objects
+  code: git pack-objects <pack>
+
+- name: git-prune-packed
+  type: git
+  description: Remove extra objects that are already in pack files
+  code: git prune-packed
+
+- name: git-read-tree
+  type: git
+  description: Reads tree information into the index
+  code: git read-tree <tree-ish>
+
+- name: git-symbolic-ref
+  type: git
+  description: Read or change a symbolic reference
+  code: git symbolic-ref [-q|--quiet] <name>
+
+- name: git-unpack-objects
+  type: git
+  description: Unpack objects from a packed archive
+  code: git unpack-objects < pack

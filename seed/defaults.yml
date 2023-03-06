@@ -1,0 +1,71 @@
+- name: git aliases
+  type: ohmyzsh
+  description: Set up aliases for common git commands.
+  code: |
+    alias gs='git status'
+    alias ga='git add'
+    alias gc='git commit'
+    alias gco='git checkout'
+    alias gd='git diff'
+    
+- name: zsh history
+  type: zsh
+  description: Display the last 20 commands you typed in the terminal.
+  code: |
+    history 20
+    
+- name: zsh colors
+  type: zsh
+  description: Print a color chart in the terminal.
+  code: |
+    for i in {0..255} ; do
+        printf "\x1b[38;5;${i}mcolour${i}\n"
+    done
+    
+- name: show directory size
+  type: command line
+  description: Display the size of a directory and its contents.
+  code: |
+    du -sh directory_name
+    
+- name: remove directory
+  type: command line
+  description: Delete a directory and its contents.
+  code: |
+    rm -rf directory_name
+    
+- name: show file permissions
+  type: command line
+  description: Display the permissions of a file.
+  code: |
+    ls -l file_name
+    
+- name: change file permissions
+  type: command line
+  description: Change the permissions of a file.
+  code: |
+    chmod permission file_name
+    
+- name: edit text in nano
+  type: text editor
+  description: Edit a text file using the nano editor.
+  code: |
+    nano file_name
+    
+- name: edit text in vim
+  type: text editor
+  description: Edit a text file using the vim editor.
+  code: |
+    vim file_name
+    
+- name: create symbolic link
+  type: command line
+  description: Create a symbolic link to a file or directory.
+  code: |
+    ln -s source_file target_file
+    
+- name: copy file
+  type: command line
+  description: Copy a file from one location to another.
+  code: |
+    cp source_file target_file
