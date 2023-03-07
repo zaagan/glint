@@ -1,0 +1,250 @@
+- name: Check Rails version
+  type: rails
+  description: Check the version of the Rails gem
+  code: rails -v
+  
+- name: Create a new Rails app
+  type: rails
+  description: Create a new Rails application with PostgreSQL database
+  code: |
+    rails new <app_name>
+    # OR
+    rails new <app_name> --database=postgresql
+
+- name: Generate a new scaffold
+  type: rails
+  description: Generate a new scaffold with name and attributes
+  code: rails generate scaffold Product name:string price:decimal description:text
+
+- name: Generate a migration
+  type: rails
+  description: Generate a new migration with name and attributes
+  code: rails generate migration Add
+
+- name: Start the Rails server
+  type: rails
+  description: Start the Rails server and make the application available at http://localhost:3000
+  code: rails server
+
+- name: Seed the database
+  type: rails
+  description: "Run the seed data script to populate the database"
+  code: |
+    rails db:seed
+
+- name: Generate a new controller
+  type: rails
+  description: Generate a new controller with the given name
+  code: rails generate controller <controller_name>
+
+- name: Generate a new model
+  type: rails
+  description: Generate a new model with the given name
+  code: rails generate model <model_name>
+
+- name: Generate a new migration
+  type: rails
+  description: Generate a new migration with the given name
+  code: rails generate migration <migration_name>
+
+- name: Run database migrations
+  type: rails
+  description: Run any pending database migrations
+  code: rails db:migrate
+
+- name: Rollback database migrations
+  type: rails
+  description: Roll back the last database migration
+  code: rails db:rollback
+
+- name: Show database schema
+  type: rails
+  description: "Display the current database schema"
+  code: |
+    rails db:schema:dump
+
+- name: Refresh the database schema
+  type: rails
+  description: "Re-create the database schema from the schema file"
+  code: |
+    rails db:schema:load
+
+- name: Generate a new scaffold
+  type: rails
+  description: Generate a new scaffold with the given name
+  code: rails generate scaffold <scaffold_name>
+
+- name: Create a new Rails plugin
+  type: rails
+  description: Create a new Rails plugin with the given name
+  code: rails plugin new <plugin_name>
+
+- name: List all routes
+  type: rails
+  description: List all defined routes in the Rails application
+  code: rails routes
+
+- name: Start a Rails console
+  type: rails
+  description: Start a Rails console for the current environment
+  code: rails console
+
+- name: Start a Rails console for the test environment
+  type: rails
+  description: Start a Rails console for the test environment
+  code: rails console test
+
+- name: Start a Rails console for the production environment
+  type: rails
+  description: Start a Rails console for the production environment
+  code: rails console production
+
+- name: Generate a new mailer
+  type: rails
+  description: Generate a new mailer with the given name
+  code: rails generate mailer <mailer_name>
+
+- name: Generate a new job
+  type: rails
+  description: Generate a new job with the given name
+  code: rails generate job <job_name>
+
+- name: Run a single test file
+  type: rails
+  description: Run a single test file with the given path
+  code: rails test <path_to_test_file>
+
+- name: Run all test files in a directory
+  type: rails
+  description: Run all test files in the given directory
+  code: rails test <path_to_directory>
+
+- name: Generate a new migration to add a column to a table
+  type: rails
+  description: Generate a new migration to add a column with the given name to a table
+  code: rails generate migration add_<column_name>_to_<table_name> <column_name>:<data_type>
+
+- name: Generate a new migration to remove a column from a table
+  type: rails
+  description: Generate a new migration to remove a column with the given name from a table
+  code: rails generate migration remove_<column_name>_from_<table_name>
+
+- name: Create a new migration
+  type: rails
+  description: Create a new migration file
+  code: rails generate migration <migration_name>
+
+- name: Run pending migrations
+  type: rails
+  description: Run all pending migrations
+  code: rails db:migrate
+
+- name: Rollback last migration
+  type: rails
+  description: Rollback the last migration
+  code: rails db:rollback
+
+- name: Rollback multiple migrations
+  type: rails
+  description: Rollback multiple migrations
+  code: rails db:rollback STEP=<number_of_migrations_to_rollback>
+
+- name: Reset the database
+  type: rails
+  description: Reset the database and run all migrations
+  code: rails db:reset
+
+- name: Drop the database
+  type: rails
+  description: Drop the database
+  code: rails db:drop
+
+- name: Create the database
+  type: rails
+  description: Create the database
+  code: rails db:create
+
+- name: Add a new column to a table
+  type: rails
+  description: Add a new column to a table
+  code: rails generate migration add_column_to_table column_name:data_type
+
+- name: Remove a column from a table
+  type: rails
+  description: Remove a column from a table
+  code: rails generate migration remove_column_from_table column_name
+
+- name: Rename a column in a table
+  type: rails
+  description: Rename a column in a table
+  code: rails generate migration rename_column_in_table old_column_name:new_column_name
+
+- name: create_table
+  type: rails
+  description: Create a new database table
+  code: rails generate migration Create[TableName] [column1]:[datatype1] [column2]:[datatype2] ...
+
+- name: add_column
+  type: rails
+  description: Add a new column to an existing table
+  code: rails generate migration Add[ColumnName]To[TableName] [column]:[datatype]
+
+- name: remove_column
+  type: rails
+  description: Remove a column from an existing table
+  code: rails generate migration Remove[ColumnName]From[TableName]
+
+- name: rename_column
+  type: rails
+  description: Rename a column in an existing table
+  code: rails generate migration Rename[OldColumnName]To[NewColumnName]In[TableName]
+
+- name: change_column_type
+  type: rails
+  description: Change the data type of a column in an existing table
+  code: rails generate migration Change[ColumnName]TypeIn[TableName] [column]:[new_datatype]
+
+- name: add_index
+  type: rails
+  description: Add an index to an existing table
+  code: rails generate migration AddIndexTo[TableName] [column]:[datatype]
+
+- name: remove_index
+  type: rails
+  description: Remove an index from an existing table
+  code: rails generate migration RemoveIndexFrom[TableName] [column]:[datatype]
+  
+- name: add_reference
+  type: rails
+  description: Add a new foreign key reference column to an existing table
+  code: rails generate migration Add[ReferencedTableName]To[TableName] [referenced_table]:references
+
+- name: remove_reference
+  type: rails
+  description: Remove a foreign key reference column from an existing table
+  code: rails generate migration Remove[ReferencedTableName]From[TableName]
+  
+- name: change_column_default
+  type: rails
+  description: Change the default value of a column in an existing table
+  code: rails generate migration Change[ColumnName]DefaultIn[TableName] [new_default_value]
+
+- name: add_timestamps
+  type: rails
+  description: Add created_at and updated_at columns to an existing table
+  code: rails generate migration AddTimestampsTo[TableName]
+
+- name: remove_timestamps
+  type: rails
+  description: Remove created_at and updated_at columns from an existing table
+  code: rails generate migration RemoveTimestampsFrom[TableName]
+  
+- name: add_polymorphic
+  type: rails
+  description: Add a new polymorphic reference column to an existing table
+  code: rails generate migration Add[ReferencedTableName]ableTo[TableName] [referenced_table]:references [reference_type]:string
+
+- name: remove_polymorphic
+  type: rails
+  description: Remove a polymorphic reference column from an existing table
+  code: rails generate migration Remove[ReferencedTableName]ableFrom[TableName]

@@ -59,7 +59,6 @@
   code: rbenv shell --unset
   type: rbenv
 
-
 - name: Install a specific version
   description: Installs a specific version of Ruby
   code: rbenv install <version>
@@ -97,8 +96,7 @@
 - name: Show the current Ruby version
   type: rbenv
   description: Display the currently active Ruby version
-  code: |
-    rbenv version
+  code: rbenv version
 
 - name: List installed versions
   type: rbenv

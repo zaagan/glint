@@ -1,0 +1,203 @@
+- name: Open a file in Emacs
+  type: emacs
+  description: Open a file for editing in Emacs
+  code: emacs filename.txt
+
+- name: Save file in Emacs
+  type: emacs
+  description: Save the current file in Emacs
+  code: C-x C-s
+
+- name: Quit Emacs
+  type: emacs
+  description: Quit Emacs without asking for confirmation
+  code: C-x C-c
+
+- name: Scroll up
+  type: emacs
+  description: Scroll the text buffer up
+  code: |
+    C-v
+
+- name: Scroll down
+  type: emacs
+  description: Scroll the text buffer down
+  code: |
+    M-v
+
+- name: Undo changes in Emacs
+  type: emacs
+  description: Undo the last change in Emacs
+  code: C-/ or C-_ or C-x u
+
+- name: Redo
+  type: emacs
+  description: Redo the last undone command
+  code: |
+    C-g C-/
+
+- name: Find file in Emacs
+  type: emacs
+  description: Find a file by name and open it in Emacs
+  code: C-x C-f
+
+- name: Cut text in Emacs
+  type: emacs
+  description: Cut the selected text in Emacs
+  code: C-w
+
+- name: Copy text in Emacs
+  type: emacs
+  description: Copy the selected text in Emacs
+  code: M-w
+
+- name: Paste text in Emacs
+  type: emacs
+  description: Paste the copied/cut text in Emacs
+  code: C-y
+
+- name: Select all
+  type: emacs
+  description: Select the entire buffer
+  code: C-x h
+
+- name: Kill word
+  type: emacs
+  description: Kill the word after point
+  code: M-d
+
+- name: Go to line
+  type: emacs
+  description: Go to a specific line number in the buffer
+  code: |
+    M-g g
+
+- name: Move to the beginning of the line in Emacs
+  type: emacs
+  description: Move the cursor to the beginning of the current line in Emacs
+  code: C-a
+
+- name: Move to the end of the line in Emacs
+  type: emacs
+  description: Move the cursor to the end of the current line in Emacs
+  code: C-e
+
+- name: Switch between buffers in Emacs
+  type: emacs
+  description: Switch between open buffers in Emacs
+  code: C-x b
+
+- name: Delete current line
+  type: emacs
+  description: Delete the current line
+  code: |
+    C-S-backspace
+
+- name: Move up a line
+  type: emacs
+  description: Move the cursor up one line
+  code: |
+    C-p
+
+- name: Move down a line
+  type: emacs
+  description: Move the cursor down one line
+  code: |
+    C-n
+
+- name: Search forward in Emacs
+  type: emacs
+  description: Search forward for a string in the current buffer in Emacs
+  code: C-s
+
+- name: Search backward in Emacs
+  type: emacs
+  description: Search backward for a string in the current buffer in Emacs
+  code: C-r
+
+- name: Indent selected text in Emacs
+  type: emacs
+  description: Indent the selected text in Emacs
+  code: C-M-\ or C-M-q
+
+- name: Comment/uncomment selected text in Emacs
+  type: emacs
+  description: Comment or uncomment the selected text in Emacs
+  code: M-;
+
+- name: Kill the current line in Emacs
+  type: emacs
+  description: Delete the entire current line in Emacs
+  code: C-k
+
+- name: Kill the whole buffer in Emacs
+  type: emacs
+  description: Delete the entire contents of the current buffer in Emacs
+  code: C-x h then C-w
+
+- name: Move to beginning of buffer
+  type: emacs
+  description: Move the cursor to the beginning of the buffer
+  code: |
+    M-<
+
+- name: Move to end of buffer
+  type: emacs
+  description: Move the cursor to the end of the buffer
+  code: |
+    M->
+
+- name: Find and replace in Emacs
+  type: emacs
+  description: Find and replace a string in the current buffer in Emacs
+  code: M-x replace-string
+
+- name: Split window in Emacs
+  type: emacs
+  description: Split the current window into two side-by-side windows in Emacs
+  code: C-x 2
+
+- name: Split window vertically
+  type: emacs
+  description: Split the window vertically
+  code: |
+    C-x 3
+
+- name: Switch window in Emacs
+  type: emacs
+  description: Move the cursor to the other window in Emacs
+  code: C-x o
+
+- name: Resize window in Emacs
+  type: emacs
+  description: Resize the current window in Emacs
+  code: C-x + or C-x -
+
+- name: Change font size in Emacs
+  type: emacs
+  description: Increase or decrease the font size in Emacs
+  code: C-x C-+ or C-x C--
+
+- name: Kill current buffer
+  type: emacs
+  description: Kill the current buffer
+  code: |
+    C-x k
+
+- name: Switch to previous buffer
+  type: emacs
+  description: Switch to the previously visited buffer
+  code: |
+    C-x b RET
+
+- name: Toggle fullscreen
+  type: emacs
+  description: Toggle fullscreen mode
+  code: |
+    F11
+
+- name: Toggle line numbers
+  type: emacs
+  description: Toggle line numbers in the buffer
+  code: |
+    M-x linum-mode

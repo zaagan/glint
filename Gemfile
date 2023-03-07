@@ -1,8 +1,11 @@
 source 'https://rubygems.org'
 
+ruby '2.7.0'
+
 gem 'sqlite3', '~> 1.4'
 gem 'thor', '~> 1.1'
 gem 'terminal-table'
+gem 'colorize' 
 
 group :development, :test do
   gem 'rspec', '~> 3.10'

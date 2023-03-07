@@ -38,6 +38,8 @@ module Glint
           @all_types << type_name
 
           add(type_name, name, code, description) unless exists?(type_name, name)
+        rescue => error
+          puts "Failed to insert glint. #{type} : #{cheat}"
         end
       end
     end

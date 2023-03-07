@@ -51,13 +51,7 @@
   description: Edit a text file using the nano editor.
   code: |
     nano file_name
-    
-- name: edit text in vim
-  type: text editor
-  description: Edit a text file using the vim editor.
-  code: |
-    vim file_name
-    
+
 - name: create symbolic link
   type: command line
   description: Create a symbolic link to a file or directory.

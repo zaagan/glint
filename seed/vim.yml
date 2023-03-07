@@ -1,0 +1,213 @@
+- name: edit text in vim
+  type: text editor
+  description: Edit a text file using the vim editor.
+  code: |
+    vim file_name
+
+- name: Open a file in a new tab
+  type: vim
+  code: ":tabnew <filename>"
+
+- name: Save the current file
+  type: vim
+  code: ":w"
+
+- name: Save the current file and exit vim
+  type: vim
+  code: ":wq"
+
+- name: Exit vim without saving changes
+  type: vim
+  code: ":q!"
+
+- name: Undo the last change
+  type: vim
+  code: "u"
+
+- name: Redo the last undone change
+  type: vim
+  code: "Ctrl-r"
+
+- name: Search for a string
+  type: vim
+  code: "/<search string>"
+
+- name: Replace all occurrences of a string
+  type: vim
+  code: ":%s/<search string>/<replace string>/g"
+
+- name: Move to the beginning of the line
+  type: vim
+  code: "0"
+
+- name: Move to the end of the line
+  type: vim
+  code: "$"
+
+- name: Copy a line
+  type: vim
+  code: "yy"
+
+- name: Cut a line
+  type: vim
+  code: "dd"
+
+- name: Paste the copied or cut line
+  type: vim
+  code: "p"
+
+- name: Move to the beginning of the file
+  type: vim
+  code: "gg"
+
+- name: Move to the end of the file
+  type: vim
+  code: "G"
+
+- name: Open a file in a new split window
+  type: vim
+  code: ":sp <filename>"
+
+- name: Switch between split windows
+  type: vim
+  code: "Ctrl-w Ctrl-w"
+
+- name: Increase the indent of a line
+  type: vim
+  code: ">"
+
+- name: Decrease the indent of a line
+  type: vim
+  code: "<"
+
+- name: Go to the next occurrence of a word
+  type: vim
+  code: "*"
+
+- name: Go to the previous occurrence of a word
+  type: vim
+  code: "#"
+
+- name: Toggle line numbers
+  type: vim
+  code: ":set number"
+
+- name: Toggle syntax highlighting
+  type: vim
+  code: ":syntax on"
+
+- name: Open a file in read-only mode
+  type: vim
+  code: ":view <filename>"
+
+- name: Open a file with root privileges
+  type: vim
+  code: ":w !sudo tee %"
+
+- name: Undo and Redo
+  code: |
+    Undo: u
+    Redo: Ctrl + r
+
+- name: Search and Replace
+  code: |
+    Search: /<search-term>
+    Next Result: n
+    Previous Result: N
+    Replace: :%s/<search-term>/<replace-term>/g
+
+- name: Insert Mode
+  code: |
+    Insert Mode: i
+    Insert at end of line: A
+    Insert at the beginning of line: I
+
+- name: Visual Mode
+  code: |
+    Visual Mode: v
+    Select block: Ctrl + v
+    Copy: y
+    Cut: d
+
+- name: Copy and Paste
+  code: |
+    Copy: y
+    Cut: d
+    Paste: p
+    Paste before cursor: P
+
+- name: Indentation
+  code: |
+    Indent current line: >>
+    Unindent current line: <<
+
+- name: Window Management
+  code: |
+    Open new horizontal split: :split
+    Open new vertical split: :vsplit
+    Switch between windows: Ctrl + w + w
+    Close window: :q
+
+- name: Tab Management
+  code: |
+    Open new tab: :tabnew
+    Switch between tabs: gt
+    Close tab: :tabclose
+
+- name: Macros
+  code: |
+    Start recording macro: q<macro-name>
+    Stop recording macro: q
+    Run macro: @<macro-name>
+
+- name: Autocomplete
+  code: |
+    Autocomplete word: Ctrl + n
+    Autocomplete line: Ctrl + x + Ctrl + l
+    Autocomplete file path: Ctrl + x + Ctrl + f
+
+- name: File Management
+  code: |
+    Save file: :w
+    Save and quit: :wq
+    Quit without saving: :q!
+    Write to sudo: :w !sudo tee %
+    Open file: :e <file-path>
+
+- name: Multiple Cursors
+  code: |
+    Select all instances: :%s/<search-term>/<replace-term>/gc
+
+- name: Buffer Management
+  code: |
+    List open buffers: :ls
+    Switch to buffer: :b <buffer-number>
+    Close buffer: :bd <buffer-number>
+    Delete all buffers: :bufdo bd
+
+- name: File Navigation
+  code: |
+    Go to beginning of file: gg
+    Go to end of file: G
+    Go to line number: :<line-number>
+
+- name: Syntax Highlighting
+  code: |
+    Toggle syntax highlighting: :syntax on/off
+
+- name: Visualize Tabs and Spaces
+  code: |
+    Display tabs and spaces: :set list
+    Hide tabs and spaces: :set nolist
+
+- name: View File in Hexadecimal
+  code: |
+    View file in hexadecimal: :%!xxd
+
+- name: File Encoding
+  code: |
+    Set file encoding: :set encoding=<encoding-name>
+
+- name: Multiple Windows
+  code: |
+    Open multiple files in tabs: vim -p <file1> <file2> <file3>
