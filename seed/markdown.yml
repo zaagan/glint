@@ -1,0 +1,162 @@
+- name: Headers
+  type: markdown
+  description: Use # to create headers of different sizes
+  code: |
+    # H1
+    ## H2
+    ### H3
+
+- name: Bold
+  type: markdown
+  description: Use ** or __ to make text bold
+  code: |
+    **bold text**
+    __bold text__
+
+- name: Italics
+  type: markdown
+  description: Use * or _ to make text italicized
+  code: |
+    *italicized text*
+    _italicized text_
+
+- name: Links
+  type: markdown
+  description: Use [] and () to create links
+  code: |
+    [Link text](URL)
+
+- name: Images
+  type: markdown
+  description: Use ![] and () to add images
+  code: |
+    ![Alt text](Image URL)
+
+- name: Lists
+  type: markdown
+  description: Use * or - to create unordered lists and 1. to create ordered lists
+  code: |
+    * Item 1
+    * Item 2
+    * Item 3
+
+    1. Item 1
+    2. Item 2
+    3. Item 3
+
+- name: Code Blocks
+  type: markdown
+  description: Use ``` to create code blocks
+  code: |
+    ```ruby
+    def foo
+      puts "bar"
+    end
+    ```
+
+- name: Blockquotes
+  type: markdown
+  description: Use > to create blockquotes
+  code: |
+    > This is a blockquote
+
+- name: Horizontal Rules
+  type: markdown
+  description: Use ---, ___, or *** to create horizontal rules
+  code: |
+    ---
+
+- name: Task Lists
+  type: markdown
+  description: Use - [ ] to create a task list
+  code: |
+    - [ ] Item 1
+    - [x] Item 2 (completed)
+
+- name: Tables
+  type: markdown
+  description: Use | to create tables
+  code: |
+    | Column 1 | Column 2 |
+    | -------- | -------- |
+    | Row 1, Column 1 | Row 1, Column 2 |
+    | Row 2, Column 1 | Row 2, Column 2 |
+- name: Strikethrough
+  type: markdown
+  description: Use two tilde symbols to create a strikethrough effect
+  code: |
+    ~~Strikethrough~~
+
+- name: Task Lists
+  type: markdown
+  description: Use `- [ ]` for an empty task list item and `- [x]` for a completed task list item
+  code: |
+    - [ ] Task 1
+    - [x] Task 2
+
+- name: Footnotes
+  type: markdown
+  description: Create footnote and reference link for the footnote
+  code: |
+    This is some text with a footnote.[^1]
+    [^1]: Here's the footnote.
+
+- name: Tables
+  type: markdown
+  description: Use `|` to separate columns and `-` to separate the header row from the rest of the table
+  code: |
+    | Name | Age |
+    |------|-----|
+    | John | 30  |
+    | Jane | 25  |
+
+- name: Fenced Code Blocks
+  type: markdown
+  description: Use three backticks to create a fenced code block
+  code: |
+    ```ruby
+    def hello_world
+      puts "Hello World"
+    end
+    ```
+
+- name: Strikethrough
+  type: markdown
+  description: Use two tilde symbols to create a strikethrough effect
+  code: |
+    ~~Strikethrough~~
+
+- name: Link with Title
+  type: markdown
+  description: Use `[text](url "title")` to create a link with a title attribute
+  code: |
+    [Google](https://www.google.com "Search Engine")
+
+- name: Abbreviations
+  type: markdown
+  description: Create abbreviations
+  code: |
+    *[HTML]: Hypertext Markup Language*
+    The *HTML* standard is used to create web pages.
+  
+- name: Emoji
+  type: markdown
+  description: Use `:emoji_name:` to add an emoji to the text
+  code: |
+    :smile: :+1: :tada:
+
+- name: Image with Title
+  type: markdown
+  description: Use `![alt text](url "title")` to add an image with a title attribute
+  code: |
+    ![Cat](https://www.example.com/cat.jpg "A cute cat")
+
+- name: Definition Lists
+  type: markdown
+  description: Create a definition list
+  code: |
+    Term 1
+    : Definition 1
+
+    Term 2
+    : Definition 2
