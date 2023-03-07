@@ -1,8 +1,18 @@
 require 'thor'
 require_relative 'cheat_sheet'
+require 'terminal-table'
 
 module Glint
   class CLI < Thor
+    include Glint::DisplayHandler
+
+    desc "menu", "Displays a menu of available types and allows the user to choose one"
+    def menu
+      types = sheet.all_types.uniq
+      print_types(types)
+    end
+
+
     desc 'reset', 'Reset Glint to initial state'
     def reset
       puts "This will delete all cheat sheets and reset the database. Do you want to continue? (y/n)"

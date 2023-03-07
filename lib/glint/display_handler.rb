@@ -2,6 +2,11 @@
 module Glint
   module DisplayHandler
   
+    def print_types(types)
+      table = Terminal::Table.new :headings => ['Available Types'], :rows => types.map { |type| [type] }
+      puts table
+    end
+
     def print_rows(rows, search_type = nil, term = nil, options = {})
       table_rows = rows.map do |row|
         type = row[0]

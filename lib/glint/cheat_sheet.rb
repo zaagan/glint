@@ -5,9 +5,12 @@ require 'yaml'
 
 module Glint
   class CheatSheet
+    attr_reader :all_types
+
     def initialize
       @db = Database.new
       @db.create_table
+      @all_types = []
       seed
     end
 
@@ -18,9 +21,7 @@ module Glint
     end
 
     def seed
-      types = Dir.entries("seed").select do |entry|
-        entry.include?('.yml') &&  !entry.start_with?(".")
-      end.sort
+      types = load_files
 
       types.each do |type|
         default_type = File.basename(type, File.extname(type))
@@ -34,6 +35,7 @@ module Glint
           code = cheat['code']
 
           type_name = cheat['type'] ? cheat['type'] : default_type
+          @all_types << type_name
 
           add(type_name, name, code, description) unless exists?(type_name, name)
         end
@@ -63,5 +65,14 @@ module Glint
     def search(term, type = nil, options = {})
       @db.search_cheats(term, type, options)
     end
+
+    private
+
+    def load_files
+      Dir.entries("seed").select do |entry|
+        entry.include?('.yml') && !entry.start_with?(".")
+      end.sort
+    end
+
   end
 end

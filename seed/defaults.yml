@@ -1,5 +1,5 @@
 - name: git aliases
-  type: ohmyzsh
+  type: git
   description: Set up aliases for common git commands.
   code: |
     alias gs='git status'
