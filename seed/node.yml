@@ -8,3 +8,105 @@
 - name: Install a package from npm
   description: Install a package and save it to the project's dependencies
   code: npm install <package> --save
+
+- name: Create a new Node.js project with npm
+  type: node
+  description: Create a new Node.js project with npm
+  code: |
+    npm init
+
+- name: Install a package locally with npm
+  type: node
+  description: Install a package locally with npm
+  code: |
+    npm install <package>
+
+- name: Install a package globally with npm
+  type: node
+  description: Install a package globally with npm
+  code: |
+    npm install -g <package>
+
+- name: Install a package as a development dependency with npm
+  type: node
+  description: Install a package as a development dependency with npm
+  code: |
+    npm install --save-dev <package>
+
+- name: Start a Node.js application
+  type: node
+  description: Start a Node.js application
+  code: |
+    node app.js
+
+- name: Use the Node.js REPL
+  type: node
+  description: Use the Node.js REPL
+  code: |
+    node
+
+- name: Print output to the console in Node.js
+  type: node
+  description: Print output to the console in Node.js
+  code: |
+    console.log("Hello, World!");
+
+- name: Declare a variable in Node.js
+  type: node
+  description: Declare a variable in Node.js
+  code: |
+    const message = "Hello, World!";
+
+- name: Define a function in Node.js
+  type: node
+  description: Define a function in Node.js
+  code: |
+    function greet(name) {
+      console.log(`Hello, ${name}!`);
+    }
+
+- name: Use the built-in Node.js 'fs' module to read a file
+  type: node
+  description: Use the built-in Node.js 'fs' module to read a file
+  code: |
+    const fs = require('fs');
+    fs.readFile('file.txt', 'utf8', (err, data) => {
+      if (err) throw err;
+      console.log(data);
+    });
+
+- name: Use the built-in Node.js 'http' module to create a server
+  type: node
+  description: Use the built-in Node.js 'http' module to create a server
+  code: |
+    const http = require('http');
+    const server = http.createServer((req, res) => {
+      res.statusCode = 200;
+      res.setHeader('Content-Type', 'text/plain');
+      res.end('Hello, World!');
+    });
+    server.listen(3000, () => {
+      console.log('Server running at http://localhost:3000/');
+    });
+
+- name: Use the built-in Node.js 'path' module to work with file paths
+  type: node
+  description: Use the built-in Node.js 'path' module to work with file paths
+  code: |
+    const path = require('path');
+    const filePath = path.join(__dirname, 'file.txt');
+    console.log(filePath);
+
+- name: Use the built-in Node.js 'crypto' module to generate a random string
+  type: node
+  description: Use the built-in Node.js 'crypto' module to generate a random string
+  code: |
+    const crypto = require('crypto');
+    const randomString = crypto.randomBytes(20).toString('hex');
+    console.log(randomString);
+
+- name: Use the built-in Node.js 'url' module to parse a URL
+  type: node
+  description: Use the built-in Node.js 'url' module to parse a URL
+  code: |
+    const url = require

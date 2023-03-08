@@ -6,21 +6,20 @@ module Glint
   class CLI < Thor
     include Glint::DisplayHandler
 
-    desc "menu", "Displays a menu of available types and allows the user to choose one"
+    desc 'menu', 'Displays a menu of available types and allows the user to choose one'
     def menu
       types = sheet.all_types.uniq
       print_types(types)
     end
 
-
     desc 'reset', 'Reset Glint to initial state'
     def reset
-      puts "This will delete all cheat sheets and reset the database. Do you want to continue? (y/n)"
-      answer = STDIN.gets.chomp.downcase
-      if answer == 'y' || answer == 'yes'
+      puts 'This will delete all cheat sheets and reset the database. Do you want to continue? (y/n)'
+      answer = $stdin.gets.chomp.downcase
+      if %w['y', 'yes'].include?(answer)
         sheet.reset
       else
-        puts "Aborting reset."
+        puts 'Aborting reset.'
       end
     end
 
@@ -40,13 +39,13 @@ module Glint
     end
 
     desc 'list [TYPE]', 'List all cheats'
-    method_option :description, type: :boolean, aliases: "-d", desc: "Display descriptions"
+    method_option :description, type: :boolean, aliases: '-d', desc: 'Display descriptions'
     def list(type = nil)
       sheet.list(type, options)
     end
 
     desc 'search SEARCH_TERM [TYPE]', 'List all cheats'
-    method_option :description, type: :boolean, aliases: "-d", desc: "Display descriptions"
+    method_option :description, type: :boolean, aliases: '-d', desc: 'Display descriptions'
     def search(term, type = nil)
       sheet.search(term, type, options)
     end

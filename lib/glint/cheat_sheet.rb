@@ -1,13 +1,19 @@
 require 'sqlite3'
 require 'colorize'
 require_relative 'database'
+require_relative 'file_handler'
 require 'yaml'
 
 module Glint
   class CheatSheet
-    attr_reader :all_types
+    include ::Glint::FileHandler
+
+    attr_reader :all_types, :seeds_path
 
     def initialize
+      two_steps_back = move_back(move_back(current_dir_path))
+      @seeds_path = File.join(two_steps_back, 'seed')
+
       @db = Database.new
       @db.create_table
       @all_types = []
@@ -22,10 +28,10 @@ module Glint
 
     def seed
       types = load_files
-
       types.each do |type|
+
         default_type = File.basename(type, File.extname(type))
-        file_path = "seed/#{type}"
+        file_path = "#{seeds_path}/#{type}"
         next unless File.exist?(file_path)
 
         cheat_sheet = YAML.load_file(file_path)
@@ -34,11 +40,12 @@ module Glint
           description = cheat['description']
           code = cheat['code']
 
-          type_name = cheat['type'] ? cheat['type'] : default_type
+          type_name = cheat['type'] || default_type
           @all_types << type_name
 
           add(type_name, name, code, description) unless exists?(type_name, name)
-        rescue => error
+        rescue StandardError => e
+          puts e.to_s
           puts "Failed to insert glint. #{type} : #{cheat}"
         end
       end
@@ -71,10 +78,9 @@ module Glint
     private
 
     def load_files
-      Dir.entries("seed").select do |entry|
-        entry.include?('.yml') && !entry.start_with?(".")
+      Dir.entries(seeds_path).select do |entry|
+        entry.include?('.yml') && !entry.start_with?('.')
       end.sort
     end
-
   end
 end

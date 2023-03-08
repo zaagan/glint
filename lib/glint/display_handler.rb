@@ -1,9 +1,7 @@
-
 module Glint
   module DisplayHandler
-  
     def print_types(types)
-      table = Terminal::Table.new :headings => ['Available Types'], :rows => types.map { |type| [type] }
+      table = Terminal::Table.new headings: ['Available Types'], rows: types.map { |type| [type] }
       puts table
     end
 
@@ -11,11 +9,11 @@ module Glint
       table_rows = rows.map do |row|
         type = row[0]
 
-        if search_type
-          name = row[1]
-        else
-          name = row[1].colorize(:light_blue).bold
-        end
+        name = if search_type
+                 row[1]
+               else
+                 row[1].colorize(:light_blue).bold
+               end
 
         code = row[2].colorize(:light_green)
         description = row[3]
@@ -56,7 +54,5 @@ module Glint
 
       puts table
     end
-
   end
-
 end

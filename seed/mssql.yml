@@ -1,0 +1,162 @@
+- name: Connect to MSSQL server using SQL Server Authentication
+  type: mssql
+  description: Connect to MSSQL server using SQL Server Authentication
+  code: |
+    sqlcmd -S servername -U username -P password
+
+- name: Connect to MSSQL server using Windows Authentication
+  type: mssql
+  description: Connect to MSSQL server using Windows Authentication
+  code: |
+    sqlcmd -S servername -E
+
+- name: Connect to a database
+  type: mssql
+  description: Connect to a SQL Server database
+  code: sqlcmd -S servername -d dbname -U username -P password
+
+- name: Create a new database
+  type: mssql
+  description: Create a new database in MSSQL
+  code: CREATE DATABASE databasename
+
+- name: Delete a database
+  type: mssql
+  description: Delete a database
+  code: |
+    DROP DATABASE dbname;
+
+- name: Create a new table
+  type: mssql
+  description: Creates a new table in the specified database
+  code: CREATE TABLE <table_name> (
+         <column1_name> <data_type> <constraint>,
+         <column2_name> <data_type> <constraint>,
+         <column3_name> <data_type> <constraint>,
+         ...
+       );
+
+- name: Delete a table
+  type: mssql
+  description: Delete a table
+  code: |
+    DROP TABLE tablename;
+
+- name: Insert data into a table
+  type: mssql
+  description: Insert data into an existing table in MSSQL
+  code: INSERT INTO tablename (column1, column2, ...) VALUES (value1, value2, ...)
+
+- name: Select data from a table
+  type: mssql
+  description: Select data from an existing table in MSSQL
+  code: SELECT column1, column2, ... FROM tablename
+
+- name: Update data in a table
+  type: mssql
+  description: Update existing data in a table in MSSQL
+  code: UPDATE tablename SET column1 = value1, column2 = value2, ... WHERE condition
+
+- name: Delete data from a table
+  type: mssql
+  description: Delete data from an existing table in MSSQL
+  code: DELETE FROM tablename WHERE condition
+
+- name: Create a new stored procedure
+  type: mssql
+  description: Create a new stored procedure in MSSQL
+  code: CREATE PROCEDURE procedurename AS BEGIN /* procedure code here */ END
+
+- name: Execute a stored procedure
+  type: mssql
+  description: Execute an existing stored procedure in MSSQL
+  code: EXEC procedurename
+
+- name: Create a new user
+  type: mssql
+  description: Create a new user in MSSQL
+  code: CREATE LOGIN username WITH PASSWORD = 'password'
+
+- name: Grant permissions to a user
+  type: mssql
+  description: Grant permissions to an existing user in MSSQL
+  code: GRANT permissionname TO username
+
+- name: Grant select permission on a table to a user
+  type: mssql
+  description: Grant select permission on a table to a user
+  code: |
+    GRANT SELECT ON tablename TO username;
+
+- name: Revoke select permission on a table from a user
+  type: mssql
+  description: Revoke select permission on a table from a user
+  code: |
+    REVOKE SELECT ON tablename FROM username;
+
+- name: Insert data into a table
+  type: mssql
+  description: Inserts data into an existing table
+  code: INSERT INTO <table_name> (<column1_name>, <column2_name>, <column3_name>, ...)
+         VALUES (<value1>, <value2>, <value3>, ...);
+
+- name: Select all columns from a table
+  type: mssql
+  description: Select all columns from a table
+  code: |
+    SELECT * FROM tablename;
+
+- name: Select data from a table
+  type: mssql
+  description: Selects data from an existing table
+  code: SELECT <column1_name>, <column2_name>, <column3_name>, ...
+         FROM <table_name>;
+
+- name: Add a new column to a table
+  type: mssql
+  description: Adds a new column to an existing table
+  code: ALTER TABLE <table_name> ADD <column_name> <data_type> <constraint>;
+
+- name: Modify a column in a table
+  type: mssql
+  description: Modifies an existing column in a table
+  code: ALTER TABLE <table_name> ALTER COLUMN <column_name> <new_data_type> <new_constraint>;
+
+- name: Rename a column in a table
+  type: mssql
+  description: Renames an existing column in a table
+  code: EXEC sp_rename '<old_column_name>', '<new_column_name>', 'COLUMN';
+
+- name: Create a new index
+  type: mssql
+  description: Creates a new index on a table
+  code: CREATE INDEX <index_name> ON <table_name> (<column_name>);
+
+- name: Create a new stored procedure
+  type: mssql
+  description: Creates a new stored procedure in the database
+  code: CREATE PROCEDURE <procedure_name>
+         AS
+         BEGIN
+           <stored_procedure_code>
+         END;
+
+- name: Create a new view
+  type: mssql
+  description: Creates a new view in the database
+  code: CREATE VIEW <view_name>
+         AS
+         SELECT <column1_name>, <column2_name>, <column3_name>, ...
+         FROM <table_name>
+         WHERE <condition>;
+
+- name: Create a new trigger
+  type: mssql
+  description: Creates a new trigger on a table
+  code: CREATE TRIGGER <trigger_name>
+         ON <table_name>
+         AFTER INSERT, UPDATE, DELETE
+         AS
+         BEGIN
+           <trigger_code>
+         END;

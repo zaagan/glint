@@ -2,17 +2,21 @@ require 'sqlite3'
 require 'colorize'
 require 'terminal-table'
 require_relative 'display_handler'
+require_relative 'file_handler'
 
 module Glint
   class Database
     include Glint::DisplayHandler
+    include ::Glint::FileHandler
 
     TABLE_NAME = 'cheats'.freeze
 
     CMD_SELECT_COLUMNS_FROM = 'SELECT type, name, code, description FROM '.freeze
 
     def initialize
-      @db = SQLite3::Database.new('db/glint.db')
+      two_steps_back = move_back(move_back(current_dir_path))
+      @db_path = File.join(two_steps_back, 'db')
+      @db = SQLite3::Database.new("#{@db_path}/glint.db")
     end
 
     def drop_table
@@ -32,10 +36,10 @@ module Glint
     end
 
     # CHECK IF THERE IS AN ENTRY WITH A NAME AND TYPE
-    def exists?(type, name )
-      result = @db.execute("SELECT COUNT(*) FROM cheats WHERE name = ? AND type = ?", [name, type])
+    def exists?(type, name)
+      result = @db.execute('SELECT COUNT(*) FROM cheats WHERE name = ? AND type = ?', [name, type])
       count = result[0][0]
-      count > 0
+      count.positive?
     end
 
     # ADD NEW CHEAT
@@ -61,7 +65,7 @@ module Glint
       if type.nil?
         rows = @db.execute(sql)
       else
-        sql += " WHERE type = ?"
+        sql += ' WHERE type = ?'
         rows = @db.execute(sql, type)
       end
 
