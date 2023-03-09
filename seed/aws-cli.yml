@@ -4,29 +4,29 @@
   code: aws ec2 describe-instances
 
 - name: Stop an EC2 instance
-  type: aws cli
+  type: aws-cli
   description: Stop a specific EC2 instance
   code: aws ec2 stop-instances --instance-ids <instance-id>
 
 - name: Start an EC2 instance
-  type: aws cli
+  type: aws-cli
   description: Start a specific EC2 instance
   code: aws ec2 start-instances --instance-ids <instance-id>
 
 - name: List all S3 buckets
-  type: aws cli
+  type: aws-cli
   description: List all S3 buckets in your account
   code: |
     - aws s3 ls
     - aws s3api list-buckets
 
 - name: Copy a file to an S3 bucket
-  type: aws cli
+  type: aws-cli
   description: Copy a local file to an S3 bucket
   code: aws s3 cp <local-file> s3://<bucket-name>/<object-key>
 
 - name: Download a file from an S3 bucket
-  type: aws cli
+  type: aws-cli
   description: Download a file from an S3 bucket to your local machine
   code: aws s3 cp s3://<bucket-name>/<object-key> <local-file>
 
@@ -46,22 +46,22 @@
   code: aws iam create-user --user-name <user-name>
 
 - name: Create a new IAM group
-  type: aws cli
+  type: aws-cli
   description: Create a new IAM group
   code: aws iam create-group --group-name <group-name>
 
 - name: Add a user to an IAM group
-  type: aws cli
+  type: aws-cli
   description: Add an IAM user to an existing IAM group
   code: aws iam add-user-to-group --group-name <group-name> --user-name <username>
 
 - name: Create a new IAM policy
-  type: aws cli
+  type: aws-cli
   description: Create a new IAM policy with a JSON policy document
   code: aws iam create-policy --policy-name <policy-name> --policy-document file://<policy-file>.json
 
 - name: Attach an IAM policy to a user
-  type: aws cli
+  type: aws-cli
   description: Attach an existing IAM policy to an IAM user
   code: aws iam attach-user-policy --policy
 
@@ -127,26 +127,26 @@
   code: aws cloudwatch put-metric-alarm --alarm-name <alarm-name> --alarm-description <description>
 
 - name: Create a new RDS instance
-  type: aws cli
+  type: aws-cli
   description: Create a new Amazon RDS instance
   code: aws rds create-db-instance --db-instance-identifier <instance-name> --engine <engine> --db-instance-class <instance-type> --master-username <username> --master-user-password <password>
 
 - name: List all RDS instances
-  type: aws cli
+  type: aws-cli
   description: List all Amazon RDS instances in your account
   code: aws rds describe-db-instances
 
 - name: Create a new CloudFormation stack
-  type: aws cli
+  type: aws-cli
   description: Create a new CloudFormation stack from a template file
   code: aws cloudformation create-stack --stack-name <stack-name> --template-body file://<template-file>
 
 - name: Update an existing CloudFormation stack
-  type: aws cli
+  type: aws-cli
   description: Update an existing CloudFormation stack with a new template file
   code: aws cloudformation update-stack --stack-name <stack-name> --template-body file://<template-file>
 
 - name: List all CloudFormation stacks
-  type: aws cli
+  type: aws-cli
   description: List all CloudFormation stacks in your account
   code: aws cloudformation describe-stacks
