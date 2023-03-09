@@ -1,0 +1,185 @@
+- name: Create Deployment
+  type: kubernetes
+  description: Create a new deployment with the specified name and image.
+  code: kubectl create deployment <deployment-name> --image=<image-name>
+
+- name: Check Deployment Status
+  type: kubernetes
+  description: Check the status of a deployment.
+  code: kubectl rollout status deployment <deployment-name>
+
+- name: Scale Deployment
+  type: kubernetes
+  description: Scale the specified deployment to the specified number of replicas.
+  code: kubectl scale deployment <deployment-name> --replicas=<number-of-replicas>
+
+- name: Expose Deployment
+  type: kubernetes
+  description: Expose the specified deployment as a service.
+  code: kubectl expose deployment <deployment-name> --type=NodePort --port=<port-number>
+
+- name: Delete Deployment
+  type: kubernetes
+  description: Delete the specified deployment.
+  code: kubectl delete deployment <deployment-name>
+
+- name: Create Service
+  type: kubernetes
+  description: Create a new service with the specified name, type, and port.
+  code: kubectl create service <service-type> <service-name> --tcp=<port-number>:<target-port-number>
+
+- name: Check Service Status
+  type: kubernetes
+  description: Check the status of a service.
+  code: kubectl get service <service-name>
+
+- name: Scale Service
+  type: kubernetes
+  description: Scale the specified service to the specified number of replicas.
+  code: kubectl scale deployment <service-name> --replicas=<number-of-replicas>
+
+- name: Delete Service
+  type: kubernetes
+  description: Delete the specified service.
+  code: kubectl delete service <service-name>
+
+- name: Create ConfigMap
+  type: kubernetes
+  description: Create a new config map with the specified name and data.
+  code: kubectl create configmap <config-map-name> --from-literal=<key>=<value>
+
+- name: Update ConfigMap
+  type: kubernetes
+  description: Update an existing config map with the specified data.
+  code: kubectl create configmap <config-map-name> --from-literal=<key>=<new-value> --dry-run -o yaml | kubectl apply -f -
+
+- name: Delete ConfigMap
+  type: kubernetes
+  description: Delete the specified config map.
+  code: kubectl delete configmap <config-map-name>
+
+- name: Create Secret
+  type: kubernetes
+  description: Create a new secret with the specified name and data.
+  code: kubectl create secret generic <secret-name> --from-literal=<key>=<value>
+
+- name: Update Secret
+  type: kubernetes
+  description: Update an existing secret with the specified data.
+  code: kubectl create secret generic <secret-name> --from-literal=<key>=<new-value> --dry-run -o yaml | kubectl apply -f -
+
+- name: Delete Secret
+  type: kubernetes
+  description: Delete the specified secret.
+  code: kubectl delete secret <secret-name>
+
+- name: Get Kubernetes Version
+  type: kubernetes
+  description: Get the version of Kubernetes.
+  code: kubectl version
+
+- name: Get Nodes
+  type: kubernetes
+  description: Get the list of nodes in the cluster.
+  code: kubectl get nodes
+
+- name: Get pods
+  type: Kubernetes
+  description: Get all pods in a namespace
+  code: kubectl get pods -n <namespace>
+
+- name: Delete all pods in namespace
+  type: kubernetes
+  description: Deletes all pods in the specified namespace.
+  code: kubectl delete pods --all -n <namespace>
+
+- name: Scale deployment
+  type: kubernetes
+  description: Scales a deployment to the specified number of replicas.
+  code: kubectl scale deployment <deployment_name> --replicas=<number_of_replicas>
+
+- name: Get pods by label
+  type: kubernetes
+  description: Retrieves all pods with the specified label.
+  code: kubectl get pods -l <label_name>=<label_value>
+
+- name: Describe pod
+  type: kubernetes
+  description: Provides detailed information about a pod.
+  code: kubectl describe pod <pod_name>
+
+- name: Get logs from pod
+  type: kubernetes
+  description: Retrieves logs from a specific container in a pod.
+  code: kubectl logs <pod_name> <container_name>
+
+- name: Check cluster nodes
+  type: kubernetes
+  description: Displays the list of nodes in the cluster.
+  code: kubectl get nodes
+
+- name: Check cluster services
+  type: kubernetes
+  description: Displays the list of services in the cluster.
+  code: kubectl get services
+
+- name: Create ConfigMap
+  type: kubernetes
+  description: Creates a new ConfigMap from a file or directory.
+  code: kubectl create configmap <configmap_name> --from-file=<path_to_file_or_directory>
+
+- name: Create Secret
+  type: kubernetes
+  description: Creates a new Secret from a file or directory.
+  code: kubectl create secret generic <secret_name> --from-file=<path_to_file_or_directory>
+
+- name: Create namespace
+  type: kubernetes
+  description: Creates a new namespace.
+  code: kubectl create namespace <namespace_name>
+
+- name: Deploy application from manifest
+  type: kubernetes
+  description: Deploys an application from a YAML or JSON manifest file.
+  code: kubectl apply -f <path_to_manifest_file>
+
+- name: Port forward to pod
+  type: kubernetes
+  description: Forwards a local port to a port on a pod.
+  code: kubectl port-forward <pod_name> <local_port>:<pod_port>
+
+- name: Rollout status of deployment
+  type: kubernetes
+  description: Displays the status of a deployment rollout.
+  code: kubectl rollout status deployment/<deployment_name>
+
+- name: Get deployment history
+  type: kubernetes
+  description: Displays the revision history of a deployment.
+  code: kubectl rollout history deployment/<deployment_name>
+
+- name: Rollback deployment
+  type: kubernetes
+  description: Rolls back a deployment to a previous revision.
+  code: kubectl rollout undo deployment/<deployment_name>
+
+- name: Create a Job
+  type: kubernetes
+  description: Creates a new Job from a YAML or JSON manifest file.
+  code: kubectl create -f <path_to_manifest_file>
+
+- name: Check Kubernetes version
+  type: kubernetes
+  description: Displays the version of Kubernetes currently running.
+  code: kubectl version
+
+- name: View Kubernetes events
+  type: kubernetes
+  description: Displays the events for the specified object.
+  code: kubectl get events
+
+- name: Check pod health
+  type: kubernetes
+  description: Displays the health status of the specified pod.
+  code: kubectl describe pod <pod_name> | grep -A 2 ^Conditions
+

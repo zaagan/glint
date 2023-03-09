@@ -1,0 +1,149 @@
+- name: New React app using create-react-app
+  type: npx
+  description: New React app with the name 'my-app' using create-react-app.
+  code: npx create-react-app my-app
+
+- name: Start local server using http-server
+  type: npx
+  description: Start a local server with the current directory as the root folder.
+  code: npx http-server
+
+- name: Generate new Node.js project using Yeoman
+  type: npx
+  description: New Node.js project using the official Yeoman generator.
+  code: npx yo generator-node
+
+- name: Run ESLint on a JavaScript file
+  type: npx
+  description: Run ESLint on a JavaScript file named 'myfile.js'.
+  code: npx eslint myfile.js
+
+- name: Preview a markdown file in a web browser
+  type: npx
+  description: Preview a markdown file named 'mypage.md' in a web browser.
+  code: npx marked -i mypage.md -o - | npx opn -f
+
+- name: New Express.js project using express-generator
+  type: npx
+  description: New Express.js project named 'myapp' using express-generator.
+  code: npx express-generator myapp
+
+- name: New Angular project using Angular CLI
+  type: npx
+  description: New Angular project named 'my-app' using Angular CLI.
+  code: npx @angular/cli new my-app
+
+- name: Run a TypeScript file using ts-node
+  type: npx
+  description: Run a TypeScript file named 'myfile.ts' using ts-node.
+  code: npx ts-node myfile.ts
+
+- name: Compile TypeScript files to JavaScript
+  type: npx
+  description: Compile all TypeScript files in the 'src' directory to JavaScript files in the 'dist' directory.
+  code: npx tsc --outDir dist
+
+- name: New React component using create-react-component
+  type: npx
+  description: New React component named 'MyComponent' using create-react-component.
+  code: npx create-react-component MyComponent
+
+- name: Start a local server using serve
+  type: npx
+  description: Start a local server with the current directory as the root folder using serve.
+  code: npx serve
+
+- name: Minify an HTML file using html-minifier
+  type: npx
+  description: Minify an HTML file named 'mypage.html' using html-minifier.
+  code: npx html-minifier --input-dir ./ --output-dir ./ --file-ext html --collapse-whitespace
+
+- name: Convert an SVG file to React component using svgr
+  type: npx
+  description: Convert an SVG file named 'logo.svg' to a React component using svgr.
+  code: npx @svgr/cli --icon --no-prettier --no-dimensions --native --replace-attr-value "#3f3d56" logo.svg
+
+- name: Convert SVG images to PNG using svgexport
+  type: npx
+  description: Convert an SVG image named 'image.svg' to a PNG image named 'image.png'.
+  code: npx svgexport image.svg image.png
+
+- name: Preview a JSON file in the terminal using fx
+  type: npx
+  description: Preview a JSON file named 'data.json' in the terminal using fx.
+  code: npx fx data.json
+
+- name: New GraphQL schema using graphql-cli
+  type: npx
+  description: New GraphQL schema named 'schema.graphql' using graphql-cli.
+  code: npx graphql init
+
+- name: New Gatsby.js project using Gatsby CLI
+  type: npx
+  description: New Gatsby.js project named 'my-gatsby-app' using Gatsby CLI.
+  code: npx gatsby new my-gatsby-app
+
+- name: New Dockerfile using dockerfile-generator
+  type: npx
+  description: New Dockerfile for a Node.js app using dockerfile-generator.
+  code: npx dockerfile-generator node > Dockerfile
+
+- name: Convert a Markdown file to HTML using marked
+  type: npx
+  description: Convert a Markdown file named 'mypage.md' to HTML using marked.
+  code: npx marked mypage.md --output mypage.html
+
+- name: Convert Markdown to PDF using markdown-pdf
+  type: npx
+  description: Convert a Markdown file named 'mypage.md' to a PDF file named 'mypage.pdf'.
+  code: npx markdown-pdf mypage.md -o mypage.pdf
+
+- name: Run a PHP file using PHP Server
+  type: npx
+  description: Run a PHP file named 'index.php' using PHP Server.
+  code: npx php-server --router=index.php
+
+- name: New Next.js app using create-next-app
+  type: npx
+  description: New Next.js app named 'my-next-app' using create-next-app.
+  code: npx create-next-app my-next-app
+
+- name: New Nest.js project using Nest CLI
+  type: npx
+  description: New Nest.js project with the name 'my-app' using Nest CLI.
+  code: npx @nestjs/cli new my-app
+
+- name: New Vue.js project using Vue CLI
+  type: npx
+  description: New Vue.js project named 'my-vue-app' using Vue CLI.
+  code: npx @vue/cli create my-vue-app
+
+- name: Convert a CSV file to JSON
+  type: npx
+  description: Convert a CSV file named 'data.csv' to a JSON file named 'data.json'.
+  code: npx csvtojson data.csv > data.json
+
+- name: Run Jest tests on a JavaScript project
+  type: npx
+  description: Run Jest tests on a JavaScript project in watch mode.
+  code: npx jest --watch
+
+- name: Lint a TypeScript file using TSLint
+  type: npx
+  description: Lint a TypeScript file named 'myfile.ts' using TSLint.
+  code: npx tslint myfile.ts
+
+- name: Run a development server using Strapi
+  type: npx
+  description: Run a development server for a Strapi project.
+  code: npx strapi develop
+
+- name: Compile Sass files to CSS
+  type: npx
+  description: Compile all Sass files in the 'sass' directory to CSS files in the 'css' directory.
+  code: npx sass sass:css
+
+- name: Run Cypress tests on a JavaScript project
+  type: npx
+  description: Run Cypress tests on a JavaScript project in headless mode.
+  code: npx cypress run
