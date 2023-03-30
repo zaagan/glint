@@ -1,94 +1,94 @@
 - name: List all containers (running and stopped)
-  type: Docker
+  type: docker
   description: List all Docker containers (running and stopped).
   code: docker ps -a
 
 - name: List all running containers
-  type: Docker
+  type: docker
   description: List all running Docker containers.
   code: docker ps
 
 - name: Start a stopped container
-  type: Docker
+  type: docker
   description: Start a stopped Docker container.
   code: docker start [container_name]
 
 - name: Stop a running container
-  type: Docker
+  type: docker
   description: Stop a running Docker container.
   code: docker stop [container_name]
 
 - name: Remove a stopped container
-  type: Docker
+  type: docker
   description: Remove a stopped Docker container.
   code: docker rm [container_name]
 
 - name: Remove a running container
-  type: Docker
+  type: docker
   description: Remove a running Docker container.
   code: docker rm -f [container_name]
 
 - name: Pull an image from Docker Hub
-  type: Docker
+  type: docker
   description: Pull a Docker image from Docker Hub.
   code: docker pull [image_name]
 
 - name: Build an image from a Dockerfile
-  type: Docker
+  type: docker
   description: Build a Docker image from a Dockerfile in the current directory.
   code: docker build -t [image_name] .
 
 - name: Run a Docker container in interactive mode
-  type: Docker
+  type: docker
   description: Run a Docker container in interactive mode with a TTY attached.
   code: docker run -it [image_name] /bin/bash
 
 - name: Run a Docker container in detached mode
-  type: Docker
+  type: docker
   description: Run a Docker container in detached mode.
   code: docker run -d [image_name]
 
 - name: Expose a port in a Docker container
-  type: Docker
+  type: docker
   description: Expose a port in a Docker container.
   code: docker run -p [host_port]:[container_port] [image_name]
 
 - name: Copy a file from the host to a Docker container
-  type: Docker
+  type: docker
   description: Copy a file from the host to a Docker container.
   code: docker cp [file_path_on_host] [container_name]:[path_in_container]
 
 - name: Copy a file from a Docker container to the host
-  type: Docker
+  type: docker
   description: Copy a file from a Docker container to the host.
   code: docker cp [container_name]:[path_in_container] [file_path_on_host]
 
 - name: Check the logs of a Docker container
-  type: Docker
+  type: docker
   description: Check the logs of a Docker container.
   code: docker logs [container_name]
 
 - name: Execute a command in a running Docker container
-  type: Docker
+  type: docker
   description: Execute a command in a running Docker container.
   code: docker exec [container_name] [command]
 
 - name: Inspect a Docker container
-  type: Docker
+  type: docker
   description: Inspect a Docker container to get detailed information about it.
   code: docker inspect [container_name]
 
 - name: View Docker image layers
-  type: Docker
+  type: docker
   description: View the layers of a Docker image and their sizes.
   code: docker history [image_name]
 
 - name: Create a Docker network
-  type: Docker
+  type: docker
   description: Create a Docker network.
   code: docker network create [network_name]
 
 - name: Connect a Docker container to a network
-  type: Docker
+  type: docker
   description: Connect a Docker container to a network.
   code: docker network connect [network_name] [container_name]
