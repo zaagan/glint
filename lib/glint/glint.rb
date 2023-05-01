@@ -1,6 +1,7 @@
 require 'thor'
 require_relative 'cheat_sheet'
 require 'terminal-table'
+require 'pry'
 
 module Glint
   class CLI < Thor
@@ -16,7 +17,7 @@ module Glint
     def reset
       puts 'This will delete all cheat sheets and reset the database. Do you want to continue? (y/n)'
       answer = $stdin.gets.chomp.downcase
-      if %w['y', 'yes'].include?(answer)
+      if %w[y yes].include?(answer)
         sheet.reset
       else
         puts 'Aborting reset.'

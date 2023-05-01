@@ -1,0 +1,99 @@
+- name: Connect to a database
+  type: psql
+  description: Connect to a PostgreSQL database
+  code: psql -h hostname -U username -d database_name
+
+- name: Show list of databases
+  type: psql
+  description: Show a list of available databases
+  code: \l
+
+- name: Create a new database
+  type: psql
+  description: Create a new PostgreSQL database
+  code: CREATE DATABASE database_name;
+
+- name: Drop a database
+  type: psql
+  description: Drop a PostgreSQL database
+  code: DROP DATABASE database_name;
+
+- name: Connect to a specific database
+  type: psql
+  description: Connect to a specific PostgreSQL database
+  code: psql -d database_name -U username
+
+- name: Show all tables in current database
+  type: psql
+  description: Show all tables in the current PostgreSQL database
+  code: \dt
+
+- name: Show a specific table structure
+  type: psql
+  description: Show the structure of a specific PostgreSQL table
+  code: \d table_name
+
+- name: Create a new table
+  type: psql
+  description: Create a new PostgreSQL table with specified columns
+  code: CREATE TABLE table_name (column1 datatype, column2 datatype, ...);
+
+- name: Drop a table
+  type: psql
+  description: Drop a specific PostgreSQL table
+  code: DROP TABLE table_name;
+
+- name: Add a new column to a table
+  type: psql
+  description: Add a new column to a specific PostgreSQL table
+  code: ALTER TABLE table_name ADD COLUMN column_name datatype;
+
+- name: Rename a column in a table
+  type: psql
+  description: Rename a specific column in a PostgreSQL table
+  code: ALTER TABLE table_name RENAME COLUMN old_name TO new_name;
+
+- name: Modify the datatype of a column in a table
+  type: psql
+  description: Modify the datatype of a specific column in a PostgreSQL table
+  code: ALTER TABLE table_name ALTER COLUMN column_name TYPE datatype;
+
+- name: Create a new index on a table
+  type: psql
+  description: Create a new PostgreSQL index on a specific table and column
+  code: CREATE INDEX index_name ON table_name (column_name);
+
+- name: Show all indexes on a table
+  type: psql
+  description: Show all PostgreSQL indexes on a specific table
+  code: \d table_name
+
+- name: Drop an index on a table
+  type: psql
+  description: Drop a specific PostgreSQL index on a table
+  code: DROP INDEX index_name;
+
+- name: Add a new user to PostgreSQL
+  type: psql
+  description: Add a new user to PostgreSQL with specified password
+  code: CREATE USER username WITH PASSWORD 'password';
+
+- name: Grant permissions to a user
+  type: psql
+  description: Grant permissions to a specific PostgreSQL user on a specific database
+  code: GRANT permission_type ON database_name TO username;
+
+- name: Change password for a user
+  type: psql
+  description: Change the password for a specific PostgreSQL user
+  code: ALTER USER username WITH PASSWORD 'new_password';
+
+- name: Remove a user from PostgreSQL
+  type: psql
+  description: Remove a specific PostgreSQL user from the system
+  code: DROP USER username;
+
+- name: Create a new schema
+  type: psql
+  description: Create a new PostgreSQL schema
+  code: CREATE SCHEMA schema_name;

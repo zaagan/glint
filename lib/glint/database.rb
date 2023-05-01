@@ -73,9 +73,10 @@ module Glint
     end
 
     def search_cheats(term, type = nil, options = {})
+
       if type.nil?
-        sql = "#{CMD_SELECT_COLUMNS_FROM} #{TABLE_NAME} WHERE name LIKE ? OR description LIKE ? OR code LIKE ?"
-        rows = @db.execute(sql, "%#{term}%", "%#{term}%", "%#{term}%")
+        sql = "#{CMD_SELECT_COLUMNS_FROM} #{TABLE_NAME} WHERE name LIKE ? OR description LIKE ? OR code LIKE ? OR type LIKE ?"
+        rows = @db.execute(sql, "%#{term}%", "%#{term}%", "%#{term}%", "%#{term}%")
       else
         sql = "#{CMD_SELECT_COLUMNS_FROM} #{TABLE_NAME} WHERE (name LIKE ? OR description LIKE ? OR code LIKE ?) AND type = ?"
         rows = @db.execute(sql, "%#{term}%", "%#{term}%", "%#{term}%", type)
